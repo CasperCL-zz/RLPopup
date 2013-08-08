@@ -181,9 +181,6 @@
     _button1.layer.cornerRadius = 10;
     _button1.layer.masksToBounds = YES;
 
-    [_button1 addTarget:self action:@selector(buttonPressed) forControlEvents:UIControlEventTouchUpInside];
-
-
 
     [_dialog addSubview: _dialogLabel];
     [_dialog addSubview: _button1];
@@ -197,6 +194,66 @@
 }
 - (RESULT) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButton1Text: (NSString*) button1Text withButton2Text: (NSString*) button2Text {
     [self removeDialogComponents];
+
+    CGRect dialogFrame;
+    dialogFrame.size.height = 150;
+    dialogFrame.size.width = 280;
+    dialogFrame.origin.x = (_background.frame.size.width / 2) - (dialogFrame.size.width / 2); // center the view
+    dialogFrame.origin.y = (_background.frame.size.height / 2) - (dialogFrame.size.height / 2);
+    [_dialog setFrame: dialogFrame];
+    
+    
+    // The amount of taken space seen from the top of the dialog
+    int spaceTaken = 0;
+    
+    
+    CGRect labelFrame;
+    int paddingLeftRight = 20;
+    int paddingTopBottom = 10;
+    labelFrame.origin.x = paddingLeftRight/2;
+    labelFrame.origin.y = paddingTopBottom/2 + spaceTaken * 1.5;
+    labelFrame.size.height = [_dialog frame].size.height/(double)(1.5) - paddingTopBottom;
+    labelFrame.size.width = [_dialog frame].size.width - paddingLeftRight;
+    [_dialogLabel setFrame: labelFrame];
+    [_dialogLabel setTextColor: [UIColor blackColor]];
+    [_dialogLabel setBackgroundColor:[UIColor clearColor]];
+    [_dialogLabel setText: text];
+    spaceTaken += paddingTopBottom + _dialogLabel.frame.size.height;
+    
+    CGRect button1Frame;
+    button1Frame.size.height = 35;
+    button1Frame.size.width = [_dialog frame].size.width/2 - paddingLeftRight;
+    button1Frame.origin.x = [_dialog frame].size.width/4 - button1Frame.size.width/2; // center the view
+    button1Frame.origin.y = spaceTaken;
+    [_button1 setFrame: button1Frame];
+    [_button1 setBackgroundColor: [UIColor blackColor]];
+    [_button1 setTitleColor: [UIColor whiteColor] forState: UIControlStateNormal];
+    [_button1 setTitleColor: [UIColor grayColor] forState: UIControlStateHighlighted];
+    
+    [_button1 setTitle: button1Text forState: UIControlStateNormal];
+    [_button1 setTitle: button1Text forState: UIControlStateHighlighted];
+    _button1.layer.cornerRadius = 10;
+    _button1.layer.masksToBounds = YES;
+    
+    CGRect button2Frame;
+    button2Frame.size.height = 35;
+    button2Frame.size.width = [_dialog frame].size.width/2 - paddingLeftRight;
+    button2Frame.origin.x = ([_dialog frame].size.width/4)*3 - button2Frame.size.width/2; // center the view
+    button2Frame.origin.y = _button1.frame.origin.y;
+    [_button2 setFrame: button2Frame];
+    [_button2 setBackgroundColor: [UIColor blackColor]];
+    [_button2 setTitleColor: [UIColor whiteColor] forState: UIControlStateNormal];
+    [_button2 setTitleColor: [UIColor grayColor] forState: UIControlStateHighlighted];
+    
+    [_button2 setTitle: button2Text forState: UIControlStateNormal];
+    [_button2 setTitle: button2Text forState: UIControlStateHighlighted];
+    _button2.layer.cornerRadius = 10;
+    _button2.layer.masksToBounds = YES;    
+    
+    
+    [_dialog addSubview: _dialogLabel];
+    [_dialog addSubview: _button1];
+    [_dialog addSubview: _button2];
 
     
     [self showPopupWithAnimationDuration: duration];
