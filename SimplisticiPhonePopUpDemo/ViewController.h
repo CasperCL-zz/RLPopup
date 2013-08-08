@@ -1,6 +1,6 @@
 //
 //  ViewController.h
-//  SimplisticiPhonePopUpDemo
+//  test
 //
 //  Created by Casper Eekhof on 08-08-13.
 //  Copyright (c) 2013 JTC. All rights reserved.

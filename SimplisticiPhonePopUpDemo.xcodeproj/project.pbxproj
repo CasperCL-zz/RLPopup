@@ -18,6 +18,7 @@
 		AFE3164717B4242600ACA245 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE3164617B4242600ACA245 /* Default-568h@2x.png */; };
 		AFE3164A17B4242600ACA245 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE3164817B4242600ACA245 /* MainStoryboard.storyboard */; };
 		AFE3164D17B4242600ACA245 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE3164C17B4242600ACA245 /* ViewController.m */; };
+		AFE3165517B4247800ACA245 /* Popup.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE3165417B4247800ACA245 /* Popup.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		AFE3164917B4242600ACA245 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		AFE3164B17B4242600ACA245 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		AFE3164C17B4242600ACA245 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AFE3165317B4247800ACA245 /* Popup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Popup.h; sourceTree = "<group>"; };
+		AFE3165417B4247800ACA245 /* Popup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Popup.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +86,9 @@
 		AFE3163617B4242600ACA245 /* SimplisticiPhonePopUpDemo */ = {
 			isa = PBXGroup;
 			children = (
-				AFE3163F17B4242600ACA245 /* AppDelegate.h */,
-				AFE3164017B4242600ACA245 /* AppDelegate.m */,
 				AFE3164817B4242600ACA245 /* MainStoryboard.storyboard */,
+				AFE3165317B4247800ACA245 /* Popup.h */,
+				AFE3165417B4247800ACA245 /* Popup.m */,
 				AFE3164B17B4242600ACA245 /* ViewController.h */,
 				AFE3164C17B4242600ACA245 /* ViewController.m */,
 				AFE3163717B4242600ACA245 /* Supporting Files */,
@@ -96,6 +99,8 @@
 		AFE3163717B4242600ACA245 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AFE3163F17B4242600ACA245 /* AppDelegate.h */,
+				AFE3164017B4242600ACA245 /* AppDelegate.m */,
 				AFE3163817B4242600ACA245 /* SimplisticiPhonePopUpDemo-Info.plist */,
 				AFE3163917B4242600ACA245 /* InfoPlist.strings */,
 				AFE3163C17B4242600ACA245 /* main.m */,
@@ -176,6 +181,7 @@
 				AFE3163D17B4242600ACA245 /* main.m in Sources */,
 				AFE3164117B4242600ACA245 /* AppDelegate.m in Sources */,
 				AFE3164D17B4242600ACA245 /* ViewController.m in Sources */,
+				AFE3165517B4247800ACA245 /* Popup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +304,7 @@
 				AFE3165217B4242600ACA245 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
