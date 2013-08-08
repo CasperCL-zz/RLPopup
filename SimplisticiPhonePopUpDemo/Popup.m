@@ -78,8 +78,9 @@
 
 - (void) hidePopupWithAnimationDuration:(float) duration {
     [UIView animateWithDuration: duration animations:^{
-        [_popUpView setAlpha: 1.0f];
-        [_popUpView setHidden: NO];
+        [_popUpView setAlpha: 0.0f];
+    } completion:^(BOOL finished) {
+        [_popUpView setHidden: YES];
     }];
 }
 
@@ -181,9 +182,11 @@
     _button1.layer.cornerRadius = 10;
     _button1.layer.masksToBounds = YES;
 
-
+    [_button1 addTarget:self action:@selector(button1Tapped) forControlEvents:UIControlEventAllEvents];
+    
     [_dialog addSubview: _dialogLabel];
     [_dialog addSubview: _button1];
+    
     
     [self showPopupWithAnimationDuration: duration];
 }
@@ -251,11 +254,13 @@
     _button2.layer.masksToBounds = YES;    
     
     
+    [_button1 addTarget: self action:@selector(button1Tapped) forControlEvents: UIControlEventTouchUpInside];
+    [_button2 addTarget: self action:@selector(button2Tapped) forControlEvents: UIControlEventTouchUpInside];
+    
     [_dialog addSubview: _dialogLabel];
     [_dialog addSubview: _button1];
     [_dialog addSubview: _button2];
 
-    
     [self showPopupWithAnimationDuration: duration];
 }
 
@@ -265,16 +270,12 @@
     }
 }
 
-- (void) button1Tapped: (id)sender {
-    [self hidePopupWithAnimationDuration: 2.0];
+- (void) button1Tapped {
+    [self hidePopupWithAnimationDuration: 1.0];
 }
-/*
- // Only override drawRect: if you perform custom drawing.
- // An empty implementation adversely affects performance during animation.
- - (void)drawRect:(CGRect)rect
- {
- // Drawing code
- }
- */
+
+- (void) button2Tapped {
+    [self hidePopupWithAnimationDuration: 1.0];
+}
 
 @end
