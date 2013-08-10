@@ -17,6 +17,7 @@ typedef enum {
 
 
 typedef void(^result)(RESULT);
+typedef void(^onCompletion)(BOOL finished);
 @property UIView *displayView;
 
 @property UIView *popUpView;
@@ -31,11 +32,13 @@ typedef void(^result)(RESULT);
 
 - (id) initWithView: (UIView*) view;
 
-- (void) hidePopupWithAnimationDuration:(float) duration;
+- (void) hidePopupWithAnimationDuration:(float) duration onCompletion:(onCompletion) completion;
 
-- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text;
-- (void) showPopupWithAnimationDuration:(float) duration withActivityIndicatorAndText: (NSString*) text;
-- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButtonText: (NSString*) buttonText withResult: (result) result;
-- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButton1Text: (NSString*) button1Text withButton2Text: (NSString*) button2Text withResult: (result) result;
+- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text onCompletion:(onCompletion) completion;
+- (void) showPopupWithAnimationDuration:(float) duration withActivityIndicatorAndText: (NSString*) text onCompletion:(onCompletion) completion;
+- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButtonText: (NSString*) buttonText withResult: (result) result onCompletion:(onCompletion) completion;
+- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButton1Text: (NSString*) button1Text withButton2Text: (NSString*) button2Text withResult: (result) result onCompletion:(onCompletion) completion;
+
+- (void) setFont:(NSString*) fontName;
 
 @end

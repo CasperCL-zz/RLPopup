@@ -45,7 +45,7 @@
         [_dialogLabel setTextAlignment: NSTextAlignmentCenter];
         
         [_background setBackgroundColor: [UIColor blackColor]];
-        _background.alpha = 0.7;
+        _background.alpha = 0.8;
         _dialog.layer.cornerRadius = 10;
         _dialog.layer.masksToBounds = YES;
         [_dialog setBackgroundColor: [UIColor whiteColor]];
@@ -69,26 +69,27 @@
 }
 
 
-- (void) showPopupWithAnimationDuration:(float)duration {
+- (void) showPopupWithAnimationDuration:(float)duration onCompletion:(onCompletion) completion {
     [UIView animateWithDuration: duration animations:^{
         [_popUpView setAlpha: 1.0f];
         [_popUpView setHidden: NO];
-    }];
+    } completion: completion];
 }
 
-- (void) hidePopupWithAnimationDuration:(float) duration {
+- (void) hidePopupWithAnimationDuration:(float) duration onCompletion:(onCompletion) completion {
     [UIView animateWithDuration: duration animations:^{
         [_popUpView setAlpha: 0.0f];
     } completion:^(BOOL finished) {
         [_popUpView setHidden: YES];
+        completion(finished);
     }];
 }
 
 
-- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text {
+- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text onCompletion:(onCompletion) completion {
     [self removeDialogComponents];
     
-        
+    
     CGRect labelFrame;
     int paddingLeftRight = 10;
     int paddingTopBottom = 10;
@@ -103,10 +104,10 @@
     [_dialogLabel setText: text];
     [_dialog addSubview: _dialogLabel];
     
-    [self showPopupWithAnimationDuration: duration];
+    [self showPopupWithAnimationDuration: duration onCompletion: completion];
 }
 
-- (void) showPopupWithAnimationDuration:(float) duration withActivityIndicatorAndText: (NSString*) text {
+- (void) showPopupWithAnimationDuration:(float) duration withActivityIndicatorAndText: (NSString*) text onCompletion:(onCompletion) completion {
     [self removeDialogComponents];
     // The amount of taken space seen from the top of the dialog
     int spaceTakenFromTop = 0;
@@ -135,11 +136,11 @@
     [_dialogLabel setText: text];
     [_dialog addSubview: _dialogLabel];
     [_dialog addSubview: _activityIndicator];
-        
-    [self showPopupWithAnimationDuration: duration];
+    
+    [self showPopupWithAnimationDuration: duration onCompletion: completion];
 }
 
-- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButtonText: (NSString*) buttonText withResult: (result) result {
+- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButtonText: (NSString*) buttonText withResult: (result) result onCompletion:(onCompletion) completion {
     [self removeDialogComponents];
     
     _resultCallback = result;
@@ -178,7 +179,7 @@
     [_button1 setBackgroundColor: [UIColor blackColor]];
     [_button1 setTitleColor: [UIColor whiteColor] forState: UIControlStateNormal];
     [_button1 setTitleColor: [UIColor grayColor] forState: UIControlStateHighlighted];
-
+    
     [_button1 setTitle: buttonText forState: UIControlStateNormal];
     [_button1 setTitle: buttonText forState: UIControlStateHighlighted];
     _button1.layer.cornerRadius = 10;
@@ -190,10 +191,10 @@
     [_dialog addSubview: _button1];
     
     
-    [self showPopupWithAnimationDuration: duration];
+    [self showPopupWithAnimationDuration: duration onCompletion: completion];
 }
 
-- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButton1Text: (NSString*) button1Text withButton2Text: (NSString*) button2Text withResult: (result) result {
+- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButton1Text: (NSString*) button1Text withButton2Text: (NSString*) button2Text withResult: (result) result onCompletion:(onCompletion) completion {
     [self removeDialogComponents];
     
     _resultCallback = result;
@@ -251,7 +252,7 @@
     [_button2 setTitle: button2Text forState: UIControlStateNormal];
     [_button2 setTitle: button2Text forState: UIControlStateHighlighted];
     _button2.layer.cornerRadius = 10;
-    _button2.layer.masksToBounds = YES;    
+    _button2.layer.masksToBounds = YES;
     
     
     [_button1 addTarget: self action:@selector(button1Tapped) forControlEvents: UIControlEventTouchUpInside];
@@ -260,8 +261,8 @@
     [_dialog addSubview: _dialogLabel];
     [_dialog addSubview: _button1];
     [_dialog addSubview: _button2];
-
-    [self showPopupWithAnimationDuration: duration];
+    
+    [self showPopupWithAnimationDuration: duration onCompletion: completion];
 }
 
 -(void) removeDialogComponents {
@@ -271,13 +272,21 @@
 }
 
 - (void) button1Tapped {
-    [self hidePopupWithAnimationDuration: 1.0];
+    [self hidePopupWithAnimationDuration: 1.0 onCompletion:^(BOOL finished) {}];
     _resultCallback(OKAY);
 }
 
 - (void) button2Tapped {
-    [self hidePopupWithAnimationDuration: 1.0];
+    [self hidePopupWithAnimationDuration: 1.0 onCompletion:^(BOOL finished) {}];
     _resultCallback(CANCELED);
+}
+
+
+- (void) setFont:(NSString*) fontName {
+    UIFont * newFont = [UIFont fontWithName: fontName size: 17.0];
+    [_dialogLabel setFont: newFont];
+    [[_button1 titleLabel] setFont: newFont];
+    [[_button2 titleLabel] setFont: newFont];
 }
 
 @end
