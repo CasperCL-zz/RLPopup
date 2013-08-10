@@ -22,14 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AFE3162D17B4242600ACA245 /* SimplisticiPhonePopUpDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplisticiPhonePopUpDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFE3162D17B4242600ACA245 /* iPhonePopUpDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhonePopUpDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE3163017B4242600ACA245 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AFE3163217B4242600ACA245 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AFE3163417B4242600ACA245 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		AFE3163817B4242600ACA245 /* SimplisticiPhonePopUpDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimplisticiPhonePopUpDemo-Info.plist"; sourceTree = "<group>"; };
+		AFE3163817B4242600ACA245 /* iPhonePopUpDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iPhonePopUpDemo-Info.plist"; sourceTree = "<group>"; };
 		AFE3163A17B4242600ACA245 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AFE3163C17B4242600ACA245 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AFE3163E17B4242600ACA245 /* SimplisticiPhonePopUpDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimplisticiPhonePopUpDemo-Prefix.pch"; sourceTree = "<group>"; };
+		AFE3163E17B4242600ACA245 /* iPhonePopUpDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iPhonePopUpDemo-Prefix.pch"; sourceTree = "<group>"; };
 		AFE3163F17B4242600ACA245 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AFE3164017B4242600ACA245 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AFE3164217B4242600ACA245 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		AFE3162417B4242600ACA245 = {
 			isa = PBXGroup;
 			children = (
-				AFE3163617B4242600ACA245 /* SimplisticiPhonePopUpDemo */,
+				AFE3163617B4242600ACA245 /* iPhonePopUpDemo */,
 				AFE3162F17B4242600ACA245 /* Frameworks */,
 				AFE3162E17B4242600ACA245 /* Products */,
 			);
@@ -68,7 +68,7 @@
 		AFE3162E17B4242600ACA245 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AFE3162D17B4242600ACA245 /* SimplisticiPhonePopUpDemo.app */,
+				AFE3162D17B4242600ACA245 /* iPhonePopUpDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,7 +83,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AFE3163617B4242600ACA245 /* SimplisticiPhonePopUpDemo */ = {
+		AFE3163617B4242600ACA245 /* iPhonePopUpDemo */ = {
 			isa = PBXGroup;
 			children = (
 				AFE3164817B4242600ACA245 /* MainStoryboard.storyboard */,
@@ -93,6 +93,7 @@
 				AFE3164C17B4242600ACA245 /* ViewController.m */,
 				AFE3163717B4242600ACA245 /* Supporting Files */,
 			);
+			name = iPhonePopUpDemo;
 			path = SimplisticiPhonePopUpDemo;
 			sourceTree = "<group>";
 		};
@@ -101,10 +102,10 @@
 			children = (
 				AFE3163F17B4242600ACA245 /* AppDelegate.h */,
 				AFE3164017B4242600ACA245 /* AppDelegate.m */,
-				AFE3163817B4242600ACA245 /* SimplisticiPhonePopUpDemo-Info.plist */,
+				AFE3163817B4242600ACA245 /* iPhonePopUpDemo-Info.plist */,
 				AFE3163917B4242600ACA245 /* InfoPlist.strings */,
 				AFE3163C17B4242600ACA245 /* main.m */,
-				AFE3163E17B4242600ACA245 /* SimplisticiPhonePopUpDemo-Prefix.pch */,
+				AFE3163E17B4242600ACA245 /* iPhonePopUpDemo-Prefix.pch */,
 				AFE3164217B4242600ACA245 /* Default.png */,
 				AFE3164417B4242600ACA245 /* Default@2x.png */,
 				AFE3164617B4242600ACA245 /* Default-568h@2x.png */,
@@ -115,9 +116,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AFE3162C17B4242600ACA245 /* SimplisticiPhonePopUpDemo */ = {
+		AFE3162C17B4242600ACA245 /* iPhonePopUpDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AFE3165017B4242600ACA245 /* Build configuration list for PBXNativeTarget "SimplisticiPhonePopUpDemo" */;
+			buildConfigurationList = AFE3165017B4242600ACA245 /* Build configuration list for PBXNativeTarget "iPhonePopUpDemo" */;
 			buildPhases = (
 				AFE3162917B4242600ACA245 /* Sources */,
 				AFE3162A17B4242600ACA245 /* Frameworks */,
@@ -127,9 +128,9 @@
 			);
 			dependencies = (
 			);
-			name = SimplisticiPhonePopUpDemo;
+			name = iPhonePopUpDemo;
 			productName = SimplisticiPhonePopUpDemo;
-			productReference = AFE3162D17B4242600ACA245 /* SimplisticiPhonePopUpDemo.app */;
+			productReference = AFE3162D17B4242600ACA245 /* iPhonePopUpDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -141,7 +142,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = JTC;
 			};
-			buildConfigurationList = AFE3162817B4242600ACA245 /* Build configuration list for PBXProject "SimplisticiPhonePopUpDemo" */;
+			buildConfigurationList = AFE3162817B4242600ACA245 /* Build configuration list for PBXProject "iPhonePopUpDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -153,7 +154,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AFE3162C17B4242600ACA245 /* SimplisticiPhonePopUpDemo */,
+				AFE3162C17B4242600ACA245 /* iPhonePopUpDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -267,9 +268,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SimplisticiPhonePopUpDemo/SimplisticiPhonePopUpDemo-Prefix.pch";
-				INFOPLIST_FILE = "SimplisticiPhonePopUpDemo/SimplisticiPhonePopUpDemo-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "SimplisticiPhonePopUpDemo/iPhonePopUpDemo-Prefix.pch";
+				INFOPLIST_FILE = "SimplisticiPhonePopUpDemo/iPhonePopUpDemo-Info.plist";
+				PRODUCT_NAME = iPhonePopUpDemo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -278,9 +279,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SimplisticiPhonePopUpDemo/SimplisticiPhonePopUpDemo-Prefix.pch";
-				INFOPLIST_FILE = "SimplisticiPhonePopUpDemo/SimplisticiPhonePopUpDemo-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "SimplisticiPhonePopUpDemo/iPhonePopUpDemo-Prefix.pch";
+				INFOPLIST_FILE = "SimplisticiPhonePopUpDemo/iPhonePopUpDemo-Info.plist";
+				PRODUCT_NAME = iPhonePopUpDemo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -288,7 +289,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AFE3162817B4242600ACA245 /* Build configuration list for PBXProject "SimplisticiPhonePopUpDemo" */ = {
+		AFE3162817B4242600ACA245 /* Build configuration list for PBXProject "iPhonePopUpDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AFE3164E17B4242600ACA245 /* Debug */,
@@ -297,7 +298,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AFE3165017B4242600ACA245 /* Build configuration list for PBXNativeTarget "SimplisticiPhonePopUpDemo" */ = {
+		AFE3165017B4242600ACA245 /* Build configuration list for PBXNativeTarget "iPhonePopUpDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AFE3165117B4242600ACA245 /* Debug */,
