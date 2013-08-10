@@ -45,7 +45,8 @@
         [_dialogLabel setTextAlignment: NSTextAlignmentCenter];
         
         [_background setBackgroundColor: [UIColor blackColor]];
-        _background.alpha = 0.8;
+        _backgroundAlpha = 0.6;
+        _background.alpha = _backgroundAlpha;
         _dialog.layer.cornerRadius = 10;
         _dialog.layer.masksToBounds = YES;
         [_dialog setBackgroundColor: [UIColor whiteColor]];
@@ -287,6 +288,11 @@
     [_dialogLabel setFont: newFont];
     [[_button1 titleLabel] setFont: newFont];
     [[_button2 titleLabel] setFont: newFont];
+}
+
+-(void)setBackgroundAlpha:(float)backgroundAlpha {
+    _backgroundAlpha = backgroundAlpha;
+    [_background setAlpha: _backgroundAlpha];
 }
 
 @end

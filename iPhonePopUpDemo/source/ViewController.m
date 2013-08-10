@@ -21,30 +21,43 @@ Popup *popup;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     popup = [[Popup alloc] initWithView: self.view];
-//    [popup showPopupWithAnimationDuration:1.0 withText:@"test"];
-//    [popup showPopupWithAnimationDuration: 1.0 withActivityIndicatorAndText:@"Je gegevens worden geladen"];
-//    [popup showPopupWithAnimationDuration: 1.0 withText:@"Je inloggegevens zijn incorrect. Of je wachtwoord is onjuist of je gebruikersnaam is onjuist. " withButtonText: @"OK"withResult:^(RESULT r) {
-//        switch (r) {
-//            case OKAY:
-//                NSLog(@"okay");
-//                break;
-//            case CANCELED:
-//            default:
-//                NSLog(@"canceled action");
-//                break;
-//        }
-//    }];
-//    [popup showPopupWithAnimationDuration:1.0 withText:@"Weet je dat zeker?" withButton1Text:@"Ja" withButton2Text:@"Nee" withResult:^(RESULT r) {
-//        switch (r) {
-//            case OKAY:
-//                NSLog(@"okay");
-//                break;
-//            case CANCELED:
-//            default:
-//                NSLog(@"canceled action");
-//                break;
-//        }
-//    }];
+    [self showAllPopups];
+}
+
+- (void) showAllPopups {
+    [popup showPopupWithAnimationDuration:1.0 withText:@"Sample message" onCompletion:^(BOOL finished) {
+        [popup hidePopupWithAnimationDuration:1.0 onCompletion:^(BOOL finished) {
+            [popup showPopupWithAnimationDuration: 1.0 withActivityIndicatorAndText:@"Loading your data"onCompletion:^(BOOL finished) {
+                [popup hidePopupWithAnimationDuration:1.0 onCompletion:^(BOOL finished) {
+                    [popup showPopupWithAnimationDuration: 1.0 withText:@"Your credentials are incorrect. Either your username or your password is incorrect. " withButtonText: @"OK"withResult:^(RESULT r) {
+                        switch (r) {
+                            case OKAY:
+                                NSLog(@"Okay");
+                                break;
+                            case CANCELED:
+                            default:
+                                NSLog(@"Canceled action");
+                                break;
+                        }
+                    } onCompletion:^(BOOL finished) {
+                        [popup hidePopupWithAnimationDuration:1.0 onCompletion:^(BOOL finished) {
+                            [popup showPopupWithAnimationDuration:1.0 withText:@"Are you sure?" withButton1Text:@"Yes" withButton2Text:@"No" withResult:^(RESULT r) {
+                                switch (r) {
+                                    case OKAY:
+                                        NSLog(@"Okay");
+                                        break;
+                                    case CANCELED:
+                                    default:
+                                        NSLog(@"Canceled action");
+                                        break;
+                                }
+                            } onCompletion:^(BOOL finished) {}];
+                        }];
+                    }];
+                }];
+            }];
+        }];
+    }];
 }
 
 - (void)didReceiveMemoryWarning

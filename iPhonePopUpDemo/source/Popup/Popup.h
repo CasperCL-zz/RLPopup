@@ -29,6 +29,8 @@ typedef void(^onCompletion)(BOOL finished);
 @property UIButton *button2;
 @property (strong) result resultCallback;
 
+@property (nonatomic) float backgroundAlpha;
+
 
 - (id) initWithView: (UIView*) view;
 
