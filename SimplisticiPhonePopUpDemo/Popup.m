@@ -139,8 +139,10 @@
     [self showPopupWithAnimationDuration: duration];
 }
 
-- (RESULT) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButtonText: (NSString*) buttonText {
+- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButtonText: (NSString*) buttonText withResult: (result) result {
     [self removeDialogComponents];
+    
+    _resultCallback = result;
     
     CGRect dialogFrame;
     dialogFrame.size.height = 150;
@@ -181,8 +183,8 @@
     [_button1 setTitle: buttonText forState: UIControlStateHighlighted];
     _button1.layer.cornerRadius = 10;
     _button1.layer.masksToBounds = YES;
-
-    [_button1 addTarget:self action:@selector(button1Tapped) forControlEvents:UIControlEventAllEvents];
+    
+    [_button1 addTarget: self action:@selector(button1Tapped) forControlEvents: UIControlEventTouchUpInside];
     
     [_dialog addSubview: _dialogLabel];
     [_dialog addSubview: _button1];
@@ -191,13 +193,11 @@
     [self showPopupWithAnimationDuration: duration];
 }
 
-- (void)buttonPressed:(id)sender
-{
-    NSLog(@"Button pressed");
-}
-- (RESULT) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButton1Text: (NSString*) button1Text withButton2Text: (NSString*) button2Text {
+- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButton1Text: (NSString*) button1Text withButton2Text: (NSString*) button2Text withResult: (result) result {
     [self removeDialogComponents];
-
+    
+    _resultCallback = result;
+    
     CGRect dialogFrame;
     dialogFrame.size.height = 150;
     dialogFrame.size.width = 280;
@@ -272,10 +272,12 @@
 
 - (void) button1Tapped {
     [self hidePopupWithAnimationDuration: 1.0];
+    _resultCallback(OKAY);
 }
 
 - (void) button2Tapped {
     [self hidePopupWithAnimationDuration: 1.0];
+    _resultCallback(CANCELED);
 }
 
 @end

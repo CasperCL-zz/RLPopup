@@ -10,6 +10,13 @@
 
 @interface Popup : NSObject
 
+typedef enum {
+    OKAY = 1,
+    CANCELED = !OKAY
+} RESULT;
+
+
+typedef void(^result)(RESULT);
 @property UIView *displayView;
 
 @property UIView *popUpView;
@@ -19,11 +26,8 @@
 @property UILabel *dialogLabel;
 @property UIButton *button1;
 @property UIButton *button2;
+@property (strong) result resultCallback;
 
-typedef enum {
-    OKAY = 1,
-    CANCELED = !OKAY
-} RESULT;
 
 - (id) initWithView: (UIView*) view;
 
@@ -31,7 +35,7 @@ typedef enum {
 
 - (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text;
 - (void) showPopupWithAnimationDuration:(float) duration withActivityIndicatorAndText: (NSString*) text;
-- (RESULT) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButtonText: (NSString*) buttonText;
-- (RESULT) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButton1Text: (NSString*) button1Text withButton2Text: (NSString*) button2Text;
+- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButtonText: (NSString*) buttonText withResult: (result) result;
+- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButton1Text: (NSString*) button1Text withButton2Text: (NSString*) button2Text withResult: (result) result;
 
 @end
