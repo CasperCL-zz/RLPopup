@@ -29,10 +29,13 @@ typedef void(^onCompletion)(BOOL finished);
 @property UIButton *button2;
 @property (strong) result resultCallback;
 
-@property (nonatomic) float backgroundAlpha;
+@property float backgroundAlpha;
 
 
 - (id) initWithView: (UIView*) view;
+
+- (void) setButton1BackgroundImage: (UIImage*) image forState:(UIControlState) controlState;
+- (void) setButton2BackgroundImage: (UIImage*) image forState:(UIControlState) controlState;
 
 - (void) hidePopupWithAnimationDuration:(float) duration onCompletion:(onCompletion) completion;
 
