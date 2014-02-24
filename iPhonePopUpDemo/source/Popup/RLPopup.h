@@ -10,12 +10,15 @@
 
 @class RLPopup;
 
+/** An enum indicating the result of an RLPopup **/
 typedef enum {
     OKAY = 1,
     CANCELED = !OKAY
 } RESULT;
 
+/** A RLPopupResult indicating the result of an RLPopup **/
 typedef void(^RLPopupResult)(RESULT);
+/** A UIView animation block **/
 typedef void(^onCompletion)(BOOL finished);
 
 /**
@@ -48,17 +51,64 @@ typedef void(^onCompletion)(BOOL finished);
     float backgroundAlpha;
 }
 
-- (void) setButton1BackgroundImage: (UIImage*) image forState:(UIControlState) controlState;
-- (void) setButton2BackgroundImage: (UIImage*) image forState:(UIControlState) controlState;
-
+/**
+ * Hides the dialog in a specified amount of time.
+ * @param duration of the hide animation.
+ * @param completion block that is excuted after the animation.
+ */
 - (void) hidePopupWithAnimationDuration:(float) duration onCompletion:(onCompletion) completion;
 
+/**
+ * Builds and shows a popup with text.
+ * @param duration of the show animation.
+ * @param text the text to display.
+ * @param completion block that is excuted after the animation.
+ */
 - (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text onCompletion:(onCompletion) completion;
+
+/**
+ * Builds and shows a popup with a loading indicator and text.
+ * @param duration of the show animation.
+ * @param text the text to display.
+ * @param completion block that is excuted after the animation.
+ */
 - (void) showPopupWithAnimationDuration:(float) duration withActivityIndicatorAndText: (NSString*) text onCompletion:(onCompletion) completion;
+
+/**
+ * Builds and shows a popup with a confirm message and text.
+ * @param duration of the show animation.
+ * @param text the text to display.
+ * @param buttonText the text on the button
+ * @param result a block returing a value indicating a button is pressed.
+ * @param completion block that is excuted after the animation.
+ */
 - (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButtonText: (NSString*) buttonText withResult: (RLPopupResult) result onCompletion:(onCompletion) completion;
+
+/**
+ * Builds and shows a popup with a YES/NO message and text.
+ * @param duration of the show animation.
+ * @param text the text to display.
+ * @param button1Text the text on the left button
+ * @param button2Text the text on the right button
+ * @param result a block returing a value indicating a button is pressed.
+ * @param completion block that is excuted after the animation.
+ */
 - (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButton1Text: (NSString*) button1Text withButton2Text: (NSString*) button2Text withResult: (RLPopupResult) result onCompletion:(onCompletion) completion;
 
+
+/**
+ *************************************************
+ *Customize methods. Used to customize the dialog*
+ *************************************************
+ */
+// Sets the background image for the most left button.
+- (void) setButton1BackgroundImage: (UIImage*) image forState:(UIControlState) controlState;
+// Sets the background image for the most right button.
+- (void) setButton2BackgroundImage: (UIImage*) image forState:(UIControlState) controlState;
+
+// Sets the font of the dialog
 - (void) setFont:(NSString*) fontName;
+// Sets the color of the message
 - (void) setTextColor:(UIColor*) color;
 
 @end

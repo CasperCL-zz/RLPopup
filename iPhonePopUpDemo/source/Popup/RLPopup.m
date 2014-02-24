@@ -11,6 +11,9 @@
 
 @implementation RLPopup
 
+/**
+ * Inits the basic components needed for the RLPopup.
+ */
 - (id)init
 {
     self = [super init];
@@ -59,6 +62,25 @@
     return self;
 }
 
+/**
+ * Hides the dialog in a specified amount of time.
+ * @param duration of the hide animation.
+ * @param completion block that is excuted after the animation.
+ */
+- (void) hidePopupWithAnimationDuration:(float) duration onCompletion:(onCompletion) completion {
+    [UIView animateWithDuration: duration animations:^{
+        [popUpView setAlpha: 0.0f];
+    } completion:^(BOOL finished) {
+        [popUpView setHidden: YES];
+        completion(finished);
+    }];
+}
+
+/**
+ * Shows a popup with text.
+ * @param duration of the show animation.
+ * @param completion block that is excuted after the animation.
+ */
 - (void) showPopupWithAnimationDuration:(float)duration onCompletion:(onCompletion) completion {
     if(![[[[UIApplication sharedApplication] keyWindow] subviews] lastObject]) {
         double delayInSeconds = .001;
@@ -77,16 +99,12 @@
     } completion: completion];
 }
 
-- (void) hidePopupWithAnimationDuration:(float) duration onCompletion:(onCompletion) completion {
-    [UIView animateWithDuration: duration animations:^{
-        [popUpView setAlpha: 0.0f];
-    } completion:^(BOOL finished) {
-        [popUpView setHidden: YES];
-        completion(finished);
-    }];
-}
-
-
+/**
+ * Builds and shows a popup with text.
+ * @param duration of the show animation.
+ * @param text the text to display.
+ * @param completion block that is excuted after the animation.
+ */
 - (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text onCompletion:(onCompletion) completion {
     [self removeDialogComponents];
     
@@ -114,6 +132,12 @@
     [self showPopupWithAnimationDuration: duration onCompletion: completion];
 }
 
+/**
+ * Builds and shows a popup with a loading indicator and text.
+ * @param duration of the show animation.
+ * @param text the text to display.
+ * @param completion block that is excuted after the animation.
+ */
 - (void) showPopupWithAnimationDuration:(float) duration withActivityIndicatorAndText: (NSString*) text onCompletion:(onCompletion) completion {
     [self removeDialogComponents];
     // The amount of taken space seen from the top of the dialog
@@ -155,6 +179,14 @@
     [self showPopupWithAnimationDuration: duration onCompletion: completion];
 }
 
+/**
+ * Builds and shows a popup with a confirm message and text.
+ * @param duration of the show animation.
+ * @param text the text to display.
+ * @param buttonText the text on the button
+ * @param result a block returing a value indicating a button is pressed.
+ * @param completion block that is excuted after the animation.
+ */
 - (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButtonText: (NSString*) buttonText withResult: (RLPopupResult) result onCompletion:(onCompletion) completion {
     [self removeDialogComponents];
     
@@ -209,6 +241,15 @@
     [self showPopupWithAnimationDuration: duration onCompletion: completion];
 }
 
+/**
+ * Builds and shows a popup with a YES/NO message and text.
+ * @param duration of the show animation.
+ * @param text the text to display.
+ * @param button1Text the text on the left button
+ * @param button2Text the text on the right button
+ * @param result a block returing a value indicating a button is pressed.
+ * @param completion block that is excuted after the animation.
+ */
 - (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButton1Text: (NSString*) button1Text withButton2Text: (NSString*) button2Text withResult: (RLPopupResult) result onCompletion:(onCompletion) completion {
     [self removeDialogComponents];
     
@@ -280,23 +321,45 @@
     [self showPopupWithAnimationDuration: duration onCompletion: completion];
 }
 
+/**
+ * Removes all subviews from dialog
+ */
 -(void) removeDialogComponents {
-    for (UIView *view in [dialog subviews]) {
-        [view removeFromSuperview];
-    }
+    [[dialog subviews] makeObjectsPerformSelector: @selector(removeFromSuperview)];
 }
 
+/**
+ *************************************************
+ *Customize methods. Used to customize the dialog*
+ *************************************************
+ */
+
+/**
+ * Handle button 1 click event by calling the callback.
+ */
 - (void) button1Tapped {
     [self hidePopupWithAnimationDuration: 0.5 onCompletion:^(BOOL finished) {}];
-    resultCallback(OKAY);
+    if(resultCallback)
+        resultCallback(OKAY);
+    else
+        NSLog(@"No callback provided for RLPopup");
 }
 
+/**
+ * Handle button 2 click event by calling the callback.
+ */
 - (void) button2Tapped {
     [self hidePopupWithAnimationDuration: 0.5 onCompletion:^(BOOL finished) {}];
-    resultCallback(CANCELED);
+    if(resultCallback)
+        resultCallback(CANCELED);
+    else
+        NSLog(@"No callback provided for RLPopup");
 }
 
-
+/**
+ * Sets the font of the dialog
+ * @param the font name to set.
+ */
 - (void) setFont:(NSString*) fontName {
     UIFont * newFont = [UIFont fontWithName: fontName size: 17.0];
     [dialogLabel setFont: newFont];
@@ -304,14 +367,28 @@
     [[button2 titleLabel] setFont: newFont];
 }
 
+/**
+ * Sets the background image for the most left button.
+ * @param image to set.
+ * @param controlState of the button with the image.
+ */
 - (void) setButton1BackgroundImage: (UIImage*) image forState:(UIControlState) controlState {
     [button1 setBackgroundImage: image forState: controlState];
 }
 
+/**
+ * Sets the background image for the most right button.
+ * @param image to set.
+ * @param controlState of the button with the image.
+ */
 - (void) setButton2BackgroundImage: (UIImage*) image forState:(UIControlState) controlState {
     [button2 setBackgroundImage:image forState: controlState];
 }
 
+/** 
+ * Sets the color of the message.
+ * @param color to set to the text.
+ */
 - (void) setTextColor:(UIColor*) color {
     [dialogLabel setTextColor: color];
 }
