@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF60AFCA18BBDB810052AC7F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF60AFC918BBDB810052AC7F /* Media.xcassets */; };
 		AFE3163117B4242600ACA245 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE3163017B4242600ACA245 /* UIKit.framework */; };
 		AFE3163317B4242600ACA245 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE3163217B4242600ACA245 /* Foundation.framework */; };
 		AFE3163517B4242600ACA245 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE3163417B4242600ACA245 /* CoreGraphics.framework */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF60AFC918BBDB810052AC7F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = iPhonePopUpDemo/Media.xcassets; sourceTree = SOURCE_ROOT; };
 		AFE3162D17B4242600ACA245 /* iPhonePopUpDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhonePopUpDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE3163017B4242600ACA245 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AFE3163217B4242600ACA245 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,6 +129,7 @@
 				AFE3169017B65EF300ACA245 /* Default-568h@2x.png */,
 				AFE3169117B65EF300ACA245 /* Default.png */,
 				AFE3169217B65EF300ACA245 /* Default@2x.png */,
+				AF60AFC918BBDB810052AC7F /* Media.xcassets */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				AFE3169417B65EF300ACA245 /* Default.png in Resources */,
 				AFE3169517B65EF300ACA245 /* Default@2x.png in Resources */,
 				AFE3169E17B65F8400ACA245 /* InfoPlist.strings in Resources */,
+				AF60AFCA18BBDB810052AC7F /* Media.xcassets in Resources */,
 				AFE316A017B65F8400ACA245 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +305,8 @@
 		AFE3165117B4242600ACA245 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iPhonePopUpDemo/en.lproj/iPhonePopUpDemo-Prefix.pch";
 				INFOPLIST_FILE = "iPhonePopUpDemo/en.lproj/iPhonePopUpDemo-Info.plist";
@@ -312,6 +318,8 @@
 		AFE3165217B4242600ACA245 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iPhonePopUpDemo/en.lproj/iPhonePopUpDemo-Prefix.pch";
 				INFOPLIST_FILE = "iPhonePopUpDemo/en.lproj/iPhonePopUpDemo-Info.plist";
