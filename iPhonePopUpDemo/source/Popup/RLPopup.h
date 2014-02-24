@@ -101,14 +101,45 @@ typedef void(^onCompletion)(BOOL finished);
  *Customize methods. Used to customize the dialog*
  *************************************************
  */
-// Sets the background image for the most left button.
+
+/**
+ * Sets the background image for the most left button.
+ * @param color to set.
+ * @param controlState of the button with the image.
+ */
+- (void) setButton1BackgroundColor: (UIColor*) color;
+
+/**
+ * Sets the background image for the most right button.
+ * @param color to set.
+ * @param controlState of the button with the image.
+ */
+- (void) setButton2BackgroundColor: (UIColor*) color;
+
+/**
+ * Sets the background image for the most left button.
+ * @param image to set.
+ * @param controlState of the button with the image.
+ */
 - (void) setButton1BackgroundImage: (UIImage*) image forState:(UIControlState) controlState;
-// Sets the background image for the most right button.
+
+/**
+ * Sets the background image for the most right button.
+ * @param image to set.
+ * @param controlState of the button with the image.
+ */
 - (void) setButton2BackgroundImage: (UIImage*) image forState:(UIControlState) controlState;
 
-// Sets the font of the dialog
+/**
+ * Sets the font of the dialog
+ * @param the font name to set.
+ */
 - (void) setFont:(NSString*) fontName;
-// Sets the color of the message
+
+/**
+ * Sets the color of the message.
+ * @param color to set to the text.
+ */
 - (void) setTextColor:(UIColor*) color;
 
 @end

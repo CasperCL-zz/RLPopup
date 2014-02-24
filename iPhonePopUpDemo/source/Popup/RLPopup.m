@@ -223,7 +223,7 @@
     button1Frame.origin.x = [dialog frame].size.width/2 - button1Frame.size.width/2; // center the view
     button1Frame.origin.y = spaceTaken;
     [button1 setFrame: button1Frame];
-    [button1 setBackgroundColor: [UIColor blackColor]];
+    [button1 setBackgroundColor: [UIColor colorWithRed:200/255.f green:30/255.f blue:30/255.f alpha:1.0f]];
     [button1 setTitleColor: [UIColor whiteColor] forState: UIControlStateNormal];
     [button1 setTitleColor: [UIColor grayColor] forState: UIControlStateHighlighted];
     
@@ -286,7 +286,7 @@
     button1Frame.origin.x = [dialog frame].size.width/4 - button1Frame.size.width/2; // center the view
     button1Frame.origin.y = spaceTaken;
     [button1 setFrame: button1Frame];
-    [button1 setBackgroundColor: [UIColor blackColor]];
+    [button1 setBackgroundColor: [UIColor colorWithRed:200/255.f green:30/255.f blue:30/255.f alpha:1.0f]];
     [button1 setTitleColor: [UIColor whiteColor] forState: UIControlStateNormal];
     [button1 setTitleColor: [UIColor grayColor] forState: UIControlStateHighlighted];
     
@@ -301,7 +301,7 @@
     button2Frame.origin.x = ([dialog frame].size.width/4)*3 - button2Frame.size.width/2; // center the view
     button2Frame.origin.y = button1.frame.origin.y;
     [button2 setFrame: button2Frame];
-    [button2 setBackgroundColor: [UIColor blackColor]];
+    [button2 setBackgroundColor: [UIColor colorWithRed:200/255.f green:30/255.f blue:30/255.f alpha:1.0f]];
     [button2 setTitleColor: [UIColor whiteColor] forState: UIControlStateNormal];
     [button2 setTitleColor: [UIColor grayColor] forState: UIControlStateHighlighted];
     
@@ -329,12 +329,6 @@
 }
 
 /**
- *************************************************
- *Customize methods. Used to customize the dialog*
- *************************************************
- */
-
-/**
  * Handle button 1 click event by calling the callback.
  */
 - (void) button1Tapped {
@@ -354,6 +348,29 @@
         resultCallback(CANCELED);
     else
         NSLog(@"No callback provided for RLPopup");
+}
+
+/**
+ *************************************************
+ *Customize methods. Used to customize the dialog*
+ *************************************************
+ */
+
+/**
+ * Sets the background image for the most left button.
+ * @param color to set.
+ * @param controlState of the button with the image.
+ */
+- (void) setButton1BackgroundColor: (UIColor*) color {
+    [button1 setBackgroundColor:color];
+}
+/**
+ * Sets the background image for the most right button.
+ * @param color to set.
+ * @param controlState of the button with the image.
+ */
+- (void) setButton2BackgroundColor: (UIColor*) color {
+    [button2 setBackgroundColor:color];
 }
 
 /**
