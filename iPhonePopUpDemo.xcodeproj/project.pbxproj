@@ -13,7 +13,7 @@
 		AFE3168517B65E5D00ACA245 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE3168317B65E5D00ACA245 /* AppDelegate.m */; };
 		AFE3168617B65E5D00ACA245 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE3168417B65E5D00ACA245 /* main.m */; };
 		AFE3168917B65E9700ACA245 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE3168817B65E9700ACA245 /* ViewController.m */; };
-		AFE3168C17B65EBA00ACA245 /* Popup.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE3168B17B65EBA00ACA245 /* Popup.m */; };
+		AFE3168C17B65EBA00ACA245 /* RLPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE3168B17B65EBA00ACA245 /* RLPopup.m */; };
 		AFE3169317B65EF300ACA245 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE3169017B65EF300ACA245 /* Default-568h@2x.png */; };
 		AFE3169417B65EF300ACA245 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE3169117B65EF300ACA245 /* Default.png */; };
 		AFE3169517B65EF300ACA245 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE3169217B65EF300ACA245 /* Default@2x.png */; };
@@ -31,8 +31,8 @@
 		AFE3168417B65E5D00ACA245 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = iPhonePopUpDemo/source/main.m; sourceTree = SOURCE_ROOT; };
 		AFE3168717B65E9700ACA245 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = iPhonePopUpDemo/source/ViewController.h; sourceTree = SOURCE_ROOT; };
 		AFE3168817B65E9700ACA245 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = iPhonePopUpDemo/source/ViewController.m; sourceTree = SOURCE_ROOT; };
-		AFE3168A17B65EBA00ACA245 /* Popup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Popup.h; path = iPhonePopUpDemo/source/Popup/Popup.h; sourceTree = SOURCE_ROOT; };
-		AFE3168B17B65EBA00ACA245 /* Popup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Popup.m; path = iPhonePopUpDemo/source/Popup/Popup.m; sourceTree = SOURCE_ROOT; };
+		AFE3168A17B65EBA00ACA245 /* RLPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RLPopup.h; path = iPhonePopUpDemo/source/Popup/RLPopup.h; sourceTree = SOURCE_ROOT; };
+		AFE3168B17B65EBA00ACA245 /* RLPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RLPopup.m; path = iPhonePopUpDemo/source/Popup/RLPopup.m; sourceTree = SOURCE_ROOT; };
 		AFE3169017B65EF300ACA245 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "iPhonePopUpDemo/images/Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		AFE3169117B65EF300ACA245 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = iPhonePopUpDemo/images/Default.png; sourceTree = SOURCE_ROOT; };
 		AFE3169217B65EF300ACA245 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "iPhonePopUpDemo/images/Default@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -114,8 +114,8 @@
 		AFE3166F17B6329F00ACA245 /* Popup */ = {
 			isa = PBXGroup;
 			children = (
-				AFE3168A17B65EBA00ACA245 /* Popup.h */,
-				AFE3168B17B65EBA00ACA245 /* Popup.m */,
+				AFE3168A17B65EBA00ACA245 /* RLPopup.h */,
+				AFE3168B17B65EBA00ACA245 /* RLPopup.m */,
 			);
 			name = Popup;
 			path = PhonePopUpDemo/source/Popup;
@@ -200,7 +200,7 @@
 				AFE3168517B65E5D00ACA245 /* AppDelegate.m in Sources */,
 				AFE3168617B65E5D00ACA245 /* main.m in Sources */,
 				AFE3168917B65E9700ACA245 /* ViewController.m in Sources */,
-				AFE3168C17B65EBA00ACA245 /* Popup.m in Sources */,
+				AFE3168C17B65EBA00ACA245 /* RLPopup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

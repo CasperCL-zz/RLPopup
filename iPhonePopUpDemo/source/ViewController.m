@@ -3,24 +3,24 @@
 //  test
 //
 //  Created by Casper Eekhof on 08-08-13.
-//  Copyright (c) 2013 JTC. All rights reserved.
+//  Copyright (c) 2013 Redlake. All rights reserved.
 //
 
 #import "ViewController.h"
-#import "Popup.h"
+#import "RLPopup.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
-Popup *popup;
+RLPopup *popup;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    popup = [[Popup alloc] initWithView: self.view];
+    popup = [[RLPopup alloc] init];
     [self showAllPopups];
 }
 

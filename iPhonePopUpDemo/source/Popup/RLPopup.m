@@ -3,19 +3,18 @@
 //  AH Plaza
 //
 //  Created by Casper Eekhof on 08-08-13.
-//  Copyright (c) 2013 JTC. All rights reserved.
+//  Copyright (c) 2013 Redlake. All rights reserved.
 //
 
-#import "Popup.h"
+#import "RLPopup.h"
 #import <QuartzCore/QuartzCore.h>
 
-@implementation Popup
+@implementation RLPopup
 
-- (id)initWithView: (UIView*) view
+- (id)init
 {
     self = [super init];
     if (self) {
-        displayView = view;
         CGRect popupFrame;
         CGRect screenRect = [[UIScreen mainScreen] bounds];
         
@@ -54,29 +53,27 @@
         
         [popUpView addSubview: background];
         [popUpView addSubview: dialog];
-        [displayView addSubview: popUpView];
         [popUpView setAlpha: 0.0f];
         [popUpView setHidden: YES];
     }
     return self;
 }
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        if(displayView == nil)
-            NSLog(@"WARNING: You do not have linked any view with this popup %@", self);
-    }
-    return self;
-}
-
 
 - (void) showPopupWithAnimationDuration:(float)duration onCompletion:(onCompletion) completion {
+    if(![[[[UIApplication sharedApplication] keyWindow] subviews] lastObject]) {
+        double delayInSeconds = .001;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self showPopupWithAnimationDuration:duration onCompletion:completion];
+        });
+        return;
+    };
     [[[[[UIApplication sharedApplication] keyWindow] subviews] lastObject] addSubview: popUpView];
+    
+    [popUpView setHidden: NO];
     
     [UIView animateWithDuration: duration animations:^{
         [popUpView setAlpha: 1.0f];
-        [popUpView setHidden: NO];
     } completion: completion];
 }
 
@@ -158,7 +155,7 @@
     [self showPopupWithAnimationDuration: duration onCompletion: completion];
 }
 
-- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButtonText: (NSString*) buttonText withResult: (result) result onCompletion:(onCompletion) completion {
+- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButtonText: (NSString*) buttonText withResult: (RLPopupResult) result onCompletion:(onCompletion) completion {
     [self removeDialogComponents];
     
     resultCallback = result;
@@ -212,7 +209,7 @@
     [self showPopupWithAnimationDuration: duration onCompletion: completion];
 }
 
-- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButton1Text: (NSString*) button1Text withButton2Text: (NSString*) button2Text withResult: (result) result onCompletion:(onCompletion) completion {
+- (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButton1Text: (NSString*) button1Text withButton2Text: (NSString*) button2Text withResult: (RLPopupResult) result onCompletion:(onCompletion) completion {
     [self removeDialogComponents];
     
     resultCallback = result;
