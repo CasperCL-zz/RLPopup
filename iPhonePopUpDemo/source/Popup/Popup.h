@@ -8,28 +8,29 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Popup : NSObject
-
+@class Popup;
 typedef enum {
     OKAY = 1,
     CANCELED = !OKAY
 } RESULT;
 
-
 typedef void(^result)(RESULT);
 typedef void(^onCompletion)(BOOL finished);
-@property UIView *displayView;
 
-@property UIView *popUpView;
-@property UIView *background;
-@property UIView *dialog;
-@property UIActivityIndicatorView * activityIndicator;
-@property UILabel *dialogLabel;
-@property UIButton *button1;
-@property UIButton *button2;
-@property (strong) result resultCallback;
-
-@property float backgroundAlpha;
+@interface Popup : NSObject  {
+    UIView *displayView;
+    
+    UIView *popUpView;
+    UIView *background;
+    UIView *dialog;
+    UIActivityIndicatorView * activityIndicator;
+    UILabel *dialogLabel;
+    UIButton *button1;
+    UIButton *button2;
+    result resultCallback;
+    
+    float backgroundAlpha;
+}
 
 
 - (id) initWithView: (UIView*) view;
@@ -45,5 +46,6 @@ typedef void(^onCompletion)(BOOL finished);
 - (void) showPopupWithAnimationDuration:(float) duration withText: (NSString*) text withButton1Text: (NSString*) button1Text withButton2Text: (NSString*) button2Text withResult: (result) result onCompletion:(onCompletion) completion;
 
 - (void) setFont:(NSString*) fontName;
+- (void) setTextColor:(UIColor*) color;
 
 @end
