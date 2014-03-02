@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3A1CBF92-EA7B-48FE-92B0-4B67BF3AE559</string>
+	<key>IDESourceControlProjectName</key>
+	<string>iPhonePopUpDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CB54CC90-8885-4888-BB6D-7414E0A0FDBA</key>
+		<string>https://github.com/CasperCL/RLPopup.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iPhonePopUpDemo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CB54CC90-8885-4888-BB6D-7414E0A0FDBA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/CasperCL/RLPopup.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CB54CC90-8885-4888-BB6D-7414E0A0FDBA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CB54CC90-8885-4888-BB6D-7414E0A0FDBA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RLPopup</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		AF60AFC918BBDB810052AC7F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = iPhonePopUpDemo/Media.xcassets; sourceTree = SOURCE_ROOT; };
-		AFE3162D17B4242600ACA245 /* iPhonePopUpDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhonePopUpDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFE3162D17B4242600ACA245 /* RLPopupDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RLPopupDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE3163017B4242600ACA245 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AFE3163217B4242600ACA245 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AFE3163417B4242600ACA245 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -39,8 +39,8 @@
 		AFE3169117B65EF300ACA245 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = iPhonePopUpDemo/images/Default.png; sourceTree = SOURCE_ROOT; };
 		AFE3169217B65EF300ACA245 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "iPhonePopUpDemo/images/Default@2x.png"; sourceTree = SOURCE_ROOT; };
 		AFE3169717B65F8400ACA245 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = iPhonePopUpDemo/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
-		AFE3169917B65F8400ACA245 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "iPhonePopUpDemo/en.lproj/iPhonePopUpDemo-Info.plist"; sourceTree = SOURCE_ROOT; };
-		AFE3169B17B65F8400ACA245 /* en */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = en; path = "iPhonePopUpDemo/en.lproj/iPhonePopUpDemo-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		AFE3169917B65F8400ACA245 /* RLPopupDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RLPopupDemo-Info.plist"; path = "iPhonePopUpDemo/en.lproj/RLPopupDemo-Info.plist"; sourceTree = SOURCE_ROOT; };
+		AFE3169B17B65F8400ACA245 /* RLPopupDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "RLPopupDemo-Prefix.pch"; path = "iPhonePopUpDemo/en.lproj/RLPopupDemo-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		AFE3169D17B65F8400ACA245 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = iPhonePopUpDemo/en.lproj/MainStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -71,7 +71,7 @@
 		AFE3162E17B4242600ACA245 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AFE3162D17B4242600ACA245 /* iPhonePopUpDemo.app */,
+				AFE3162D17B4242600ACA245 /* RLPopupDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,7 +92,7 @@
 				AFE3169C17B65F8400ACA245 /* MainStoryboard.storyboard */,
 				AFE3168717B65E9700ACA245 /* ViewController.h */,
 				AFE3168817B65E9700ACA245 /* ViewController.m */,
-				AFE3166F17B6329F00ACA245 /* Popup */,
+				AFE3166F17B6329F00ACA245 /* RLPopup */,
 			);
 			name = iPhonePopUpDemo;
 			path = SimplisticiPhonePopUpDemo;
@@ -113,13 +113,13 @@
 			path = SimplisticiPhonePopUpDemo;
 			sourceTree = "<group>";
 		};
-		AFE3166F17B6329F00ACA245 /* Popup */ = {
+		AFE3166F17B6329F00ACA245 /* RLPopup */ = {
 			isa = PBXGroup;
 			children = (
 				AFE3168A17B65EBA00ACA245 /* RLPopup.h */,
 				AFE3168B17B65EBA00ACA245 /* RLPopup.m */,
 			);
-			name = Popup;
+			name = RLPopup;
 			path = PhonePopUpDemo/source/Popup;
 			sourceTree = SOURCE_ROOT;
 		};
@@ -137,9 +137,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AFE3162C17B4242600ACA245 /* iPhonePopUpDemo */ = {
+		AFE3162C17B4242600ACA245 /* RLPopupDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AFE3165017B4242600ACA245 /* Build configuration list for PBXNativeTarget "iPhonePopUpDemo" */;
+			buildConfigurationList = AFE3165017B4242600ACA245 /* Build configuration list for PBXNativeTarget "RLPopupDemo" */;
 			buildPhases = (
 				AFE3162917B4242600ACA245 /* Sources */,
 				AFE3162A17B4242600ACA245 /* Frameworks */,
@@ -149,9 +149,9 @@
 			);
 			dependencies = (
 			);
-			name = iPhonePopUpDemo;
+			name = RLPopupDemo;
 			productName = SimplisticiPhonePopUpDemo;
-			productReference = AFE3162D17B4242600ACA245 /* iPhonePopUpDemo.app */;
+			productReference = AFE3162D17B4242600ACA245 /* RLPopupDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -163,7 +163,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = JTC;
 			};
-			buildConfigurationList = AFE3162817B4242600ACA245 /* Build configuration list for PBXProject "iPhonePopUpDemo" */;
+			buildConfigurationList = AFE3162817B4242600ACA245 /* Build configuration list for PBXProject "RLPopupDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -175,7 +175,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AFE3162C17B4242600ACA245 /* iPhonePopUpDemo */,
+				AFE3162C17B4242600ACA245 /* RLPopupDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -222,7 +222,7 @@
 		AFE3169817B65F8400ACA245 /* iPhonePopUpDemo-Info.plist */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AFE3169917B65F8400ACA245 /* en */,
+				AFE3169917B65F8400ACA245 /* RLPopupDemo-Info.plist */,
 			);
 			name = "iPhonePopUpDemo-Info.plist";
 			sourceTree = "<group>";
@@ -230,7 +230,7 @@
 		AFE3169A17B65F8400ACA245 /* iPhonePopUpDemo-Prefix.pch */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AFE3169B17B65F8400ACA245 /* en */,
+				AFE3169B17B65F8400ACA245 /* RLPopupDemo-Prefix.pch */,
 			);
 			name = "iPhonePopUpDemo-Prefix.pch";
 			sourceTree = "<group>";
@@ -308,9 +308,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iPhonePopUpDemo/en.lproj/iPhonePopUpDemo-Prefix.pch";
-				INFOPLIST_FILE = "iPhonePopUpDemo/en.lproj/iPhonePopUpDemo-Info.plist";
-				PRODUCT_NAME = iPhonePopUpDemo;
+				GCC_PREFIX_HEADER = "iPhonePopUpDemo/en.lproj/RLPopupDemo-Prefix.pch";
+				INFOPLIST_FILE = "iPhonePopUpDemo/en.lproj/RLPopupDemo-Info.plist";
+				PRODUCT_NAME = RLPopupDemo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -321,9 +321,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iPhonePopUpDemo/en.lproj/iPhonePopUpDemo-Prefix.pch";
-				INFOPLIST_FILE = "iPhonePopUpDemo/en.lproj/iPhonePopUpDemo-Info.plist";
-				PRODUCT_NAME = iPhonePopUpDemo;
+				GCC_PREFIX_HEADER = "iPhonePopUpDemo/en.lproj/RLPopupDemo-Prefix.pch";
+				INFOPLIST_FILE = "iPhonePopUpDemo/en.lproj/RLPopupDemo-Info.plist";
+				PRODUCT_NAME = RLPopupDemo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -331,7 +331,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AFE3162817B4242600ACA245 /* Build configuration list for PBXProject "iPhonePopUpDemo" */ = {
+		AFE3162817B4242600ACA245 /* Build configuration list for PBXProject "RLPopupDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AFE3164E17B4242600ACA245 /* Debug */,
@@ -340,7 +340,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AFE3165017B4242600ACA245 /* Build configuration list for PBXNativeTarget "iPhonePopUpDemo" */ = {
+		AFE3165017B4242600ACA245 /* Build configuration list for PBXNativeTarget "RLPopupDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AFE3165117B4242600ACA245 /* Debug */,
